@@ -1,0 +1,209 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml"
+	xmlns:t="http://xmlns.jcp.org/jsf/passthrough">
+
+	<ui:param name="page_name" value="listConge" />
+	<ui:define name="content">
+		<div class="layout-main">
+			<div class="route-bar">
+				<div class="route-bar-breadcrumb">
+					<i class="fa fa-home"></i> <span>/ </span>
+					<li><a
+						href="dashboard.xhtml%3bjsessionid%3dnode0k9h9q4j0db3l1pqrdr4ocw9i242324.html"
+						class="ui-link ui-widget">My Leave</a></li>
+				</div>
+			</div>
+
+
+			<h:form enctype="multipart/form-data">
+				<div class="card card-w-title">
+					<h1>Add leave</h1>
+
+					<h:panelGroup rendered="#{mycongeBean.verif}">
+						<font color="red">Start date lower than end date !</font>
+					</h:panelGroup>
+					<div id="j_idt57"
+						class="ui-panelgrid ui-widget form-group ui-panelgrid-blank">
+						<div id="j_idt57_content"
+							class="ui-panelgrid-content ui-widget-content ui-grid ui-grid-responsive">
+
+
+
+
+							<div class="ui-g">
+								<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+									<label>Start date :</label>
+								</div>
+							</div>
+							<div class="ui-g">
+								<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+									<h:inputText id="validatedatedebut" t:type="date"
+										value="#{mycongeBean.dateDebut}" required="true"
+										requiredMessage="Required"
+										class="ui-autocomplete-input ui-inputfield ui-widget ui-state-default ui-corner-all" />
+									<h:message for="validatedatedebut" style="color:red" />
+
+								</div>
+							</div>
+
+
+							<div class="ui-g">
+								<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+									<label>End date :</label>
+								</div>
+							</div>
+							<div class="ui-g">
+								<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+									<h:inputText id="validatedatefin" t:type="date"
+										value="#{mycongeBean.dateFin}" required="true"
+										requiredMessage="Required"
+										class="ui-autocomplete-input ui-inputfield ui-widget ui-state-default ui-corner-all" />
+									<h:message for="validatedatefin" style="color:red" />
+
+								</div>
+							</div>
+
+
+							<div class="ui-g">
+								<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+									<label>Reason :</label>
+								</div>
+							</div>
+							<div class="ui-g">
+								<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+									<h:inputText id="validatecause" value="#{mycongeBean.cause}"
+										required="true" requiredMessage="Required"
+										class="ui-autocomplete-input ui-inputfield ui-widget ui-state-default ui-corner-all" />
+									<h:message for="validatecause" style="color:red" />
+
+								</div>
+							</div>
+
+
+							<div class="ui-g">
+
+								<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+									<h:commandButton action="#{mycongeBean.AjouterConge()}"
+										onclick="compareDates()"
+										class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+										style="width: auto" value="Add Leave" />
+
+
+
+								</div>
+							</div>
+
+
+
+
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</h:form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="layout-content" style="min-height: 300px">
+				<div class="layout-dashboard">
+					<div class="p-grid">
+						<div class="p-col-12">
+							<div class="ui-g ui-fluid">
+								<div class="ui-g-12">
+									<div class="card card-w-title">
+										<div id="form:j_idt48"
+											class="ui-datatable ui-widget ui-datatable-reflow">
+											<div
+												class="ui-datatable-header ui-widget-header ui-corner-top">List
+												of Leave</div>
+											<div>
+												<table role="grid">
+													<thead id="form:j_idt48_head">
+														<tr role="row">
+
+															<th id="form:j_idt48:j_idt52" role="columnheader"
+																aria-label="Year" scope="col"><span
+																class="ui-column-title">Start date</span></th>
+															<th id="form:j_idt48:j_idt54" role="columnheader"
+																aria-label="Brand" scope="col"><span
+																class="ui-column-title">End date</span></th>
+															<th id="form:j_idt48:j_idt56" role="columnheader"
+																aria-label="Color" scope="col"><span
+																class="ui-column-title">Reason</span></th>
+															<th id="form:j_idt48:j_idt56" role="columnheader"
+																aria-label="Color" scope="col"><span
+																class="ui-column-title">IsValid</span></th>
+															<th id="form:j_idt48:j_idt56" role="columnheader"
+																aria-label="Color" scope="col"><span
+																class="ui-column-title">Action</span></th>
+														</tr>
+													</thead>
+													<h:form>
+														<h:dataTable class="ui-datatable-data ui-widget-content"
+															tabindex="0" value="#{mycongeBean.conges}" var="conges">
+															<tr data-ri="0" data-rk="a8d76969"
+																class="ui-widget-content ui-datatable-even ui-datatable-selectable"
+																role="row" aria-selected="false">
+																<td role="gridcell"><h:column>
+																		<h:outputText value="#{conges.dateDebut}" />
+																	</h:column></td>
+
+																<h:column role="gridcell">
+																	<h:outputText value="#{conges.dateFin}" />
+																</h:column>
+																<h:column role="gridcell">
+																	<h:outputText value="#{conges.cause}" />
+																</h:column>
+																<h:column role="gridcell">
+																	<h:outputText rendered="#{conges.isValid eq 0}"
+																		value="In progress" />
+
+																	<h:outputText rendered="#{conges.isValid eq 2}"
+																		value="This conge has been accepted" />
+
+
+																	<h:outputText rendered="#{conges.isValid eq 1}"
+																		value="This conge has been refused" />
+																</h:column>
+
+																<h:column role="gridcell">
+																	<h:commandButton
+																		class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+																		action="#{mycongeBean.removeConge(conges.idConge)}"
+																		value="Remove" />
+
+																</h:column>
+															</tr>
+														</h:dataTable>
+													</h:form>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,93 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+
+	<ui:param name="page_name" value="listEmploye" />
+	<ui:define name="content">
+		<div class="layout-main">
+			<div class="route-bar">
+				<div class="route-bar-breadcrumb">
+					<i class="fa fa-home"></i> <span>/ </span>
+					<li><a
+						href="dashboard.xhtml%3bjsessionid%3dnode0k9h9q4j0db3l1pqrdr4ocw9i242324.html"
+						class="ui-link ui-widget">Management employee</a></li>
+				</div>
+			</div>
+			<div class="layout-content" style="min-height: 300px">
+				<div class="layout-dashboard">
+					<div class="p-grid">
+						<div class="p-col-12">
+							<div class="ui-g ui-fluid">
+								<div class="ui-g-12">
+									<div class="card card-w-title">
+										<div id="form:j_idt48"
+											class="ui-datatable ui-widget ui-datatable-reflow">
+											<div
+												class="ui-datatable-header ui-widget-header ui-corner-top">List
+												of Employees</div>
+											<div>
+												<table role="grid">
+													<thead id="form:j_idt48_head">
+														<tr role="row">
+															<th id="form:j_idt48:j_idt50" role="columnheader"
+																aria-label="Id" scope="col"><span
+																class="ui-column-title">Email</span></th>
+															<th id="form:j_idt48:j_idt52" role="columnheader"
+																aria-label="Year" scope="col"><span
+																class="ui-column-title">Role</span></th>
+															<th id="form:j_idt48:j_idt54" role="columnheader"
+																aria-label="Brand" scope="col"><span
+																class="ui-column-title">photo</span></th>
+															<th id="form:j_idt48:j_idt56" role="columnheader"
+																aria-label="Color" scope="col"><span
+																class="ui-column-title">Action</span></th>
+														</tr>
+
+													</thead>
+													<h:form>
+														<h:dataTable class="ui-datatable-data ui-widget-content"
+															tabindex="0" value="#{employeBean.users}" var="employe">
+															<tr data-ri="0" data-rk="a8d76969"
+																class="ui-widget-content ui-datatable-even ui-datatable-selectable"
+																role="row" aria-selected="false">
+																<td role="gridcell"><h:column>
+																		<h:outputText value="#{employe.email}" />
+																	</h:column></td>
+																<h:column role="gridcell">
+																	<h:outputText value="#{employe.role}" />
+																</h:column>
+																<h:column role="gridcell">
+
+																	<h:panelGroup rendered="#{employe.photo.length() > 0}">
+																		<img src="image/#{employe.photo}.jpg" height="100px"
+																			width="100px"></img>
+																	</h:panelGroup>
+
+																	<h:panelGroup rendered="#{employe.photo.length() == 0}">
+																		<img src="image/2.png" height="100px" width="100px"></img>
+																	</h:panelGroup>
+																</h:column>
+																<h:column role="gridcell">
+																	<h:commandButton
+																		class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+																		action="#{employeBean.removeUser(employe.id_user)}"
+																		value="Supprimer" />
+																</h:column>
+															</tr>
+														</h:dataTable>
+													</h:form>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

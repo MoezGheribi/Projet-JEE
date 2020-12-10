@@ -1,0 +1,163 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<div class="layout-topbar">
+		<a
+			href="dashboard.xhtml%3bjsessionid%3dnode0k9h9q4j0db3l1pqrdr4ocw9i242324.html"
+			class="layout-topbar-logo"><img id="j_idt15"
+			src="javax.faces.resource/images/0.png?ln=babylon-layout" alt="" /></a>
+		<a class="layout-menu-button" href="#"> <i class="fa fa-bars"></i>
+		</a> <a id="topbar-menu-button" href="#"> <i class="fa fa-ellipsis-v"></i>
+		</a>
+
+		<ul class="topbar-menu fadeInDown">
+			<li class="user-profile"><a href="#"> <h:panelGroup
+						rendered="#{loginBean.user.photo.length() > 0}">
+						<img src="image/#{loginBean.user.photo}.jpg" id="j_idt19" alt=""></img>
+					</h:panelGroup> <h:panelGroup rendered="#{loginBean.user.photo.length() == 0}">
+						<img src="image/2.png" id="j_idt19" height="10px" width="10px"
+							alt=""></img>
+					</h:panelGroup> <span class="topbar-item-name">.....WELCOME
+						#{loginBean.user_Name}...</span>
+			</a>
+				<ul>
+					<li><a href="update.jsf"> <i class="fa fa-fw fa-user"></i>
+							<span>Update Profile</span>
+					</a></li>
+					<li><a href="login.jsf">
+						<i class="fa fa-fw fa-sign-in fa-fw layout-menuitem-icon"></i> 
+						<span>Logout</span></a>
+					</li>
+
+				</ul></li>
+		</ul>
+	</div>
+
+	<div class="layout-menu-container">
+		<div class="layout-menu-logo">
+			<a
+				href="dashboard.xhtml%3bjsessionid%3dnode0k9h9q4j0db3l1pqrdr4ocw9i242324.html"><FONT
+				color="white" size="10"> Advyteam</FONT></a>
+		</div>
+
+		<div class="nano layout-menu-wrapper">
+			<div class="nano-content menu-scroll-content">
+				<form id="menuform" name="menuform" method="post"
+					action="https://www.primefaces.org/babylon/dashboard.xhtml;jsessionid=node0k9h9q4j0db3l1pqrdr4ocw9i242324.node0"
+					enctype="application/x-www-form-urlencoded">
+					<input type="hidden" name="menuform" value="menuform" />
+					<ul id="menuform:j_idt40" class="layout-menu">
+						<li id="menuform:om_customization" role="menuitem"
+							class="layout-root-menuitem">
+
+							<ul role="menu">
+							<h:panelGroup rendered="#{loginBean.x == false}">
+								<li id="menuform:om_menulayouts" role="menuitem"><a
+									href="#"><i
+										class="fa fa-fw fa-desktop fa-fw layout-menuitem-icon"></i><span
+										class="layout-menuitem-text">Menu Posts</span><i
+										class="fa fa-fw layout-submenu-toggler fa-angle-down"></i><span
+										class="menuitem-badge">2</span></a>
+									<div class="layout-menu-tooltip">
+										<div class="layout-menu-tooltip-arrow"></div>
+										<div class="layout-menu-tooltip-text">Menu Posts</div>
+									</div>
+									<ul role="menu">
+										<li id="menuform:om_menulayouts_1" role="menuitem"><a
+											href="espacemployee.jsf"><i
+												class="fa fa-fw fa-bars fa-fw layout-menuitem-icon"></i><span
+												class="layout-menuitem-text">Accueil</span></a>
+											<div class="layout-menu-tooltip">
+												<div class="layout-menu-tooltip-arrow"></div>
+												<div class="layout-menu-tooltip-text">Accueil</div>
+											</div></li>
+										<li id="menuform:om_menulayouts_2" role="menuitem"><a
+											href="myPublication.jsf"><i
+												class="fa fa-fw fa-bars fa-fw layout-menuitem-icon"></i><span
+												class="layout-menuitem-text">My Posts</span></a>
+											<div class="layout-menu-tooltip">
+												<div class="layout-menu-tooltip-arrow"></div>
+												<div class="layout-menu-tooltip-text">My Posts</div>
+											</div></li>
+									</ul></li>
+
+
+								
+								<li id="menuform:om_data" role="menuitem"><a
+									href="addConge.jsf"><i
+										class="fa fa-fw fa-table fa-fw layout-menuitem-icon"></i><span
+										class="layout-menuitem-text">Leave</span></a>
+									<div class="layout-menu-tooltip">
+										<div class="layout-menu-tooltip-arrow"></div>
+										<div class="layout-menu-tooltip-text">Leave</div>
+									</div></li>
+								</h:panelGroup>
+								<h:panelGroup rendered="#{loginBean.x}">
+
+								<li id="menuform:om_data" role="menuitem"><a
+									href="listConge.jsf"><i
+										class="fa fa-fw fa-table fa-fw layout-menuitem-icon"></i><span
+										class="layout-menuitem-text">Management Leave</span></a>
+									<div class="layout-menu-tooltip">
+										<div class="layout-menu-tooltip-arrow"></div>
+										<div class="layout-menu-tooltip-text">Management Leave</div>
+									</div></li>
+
+
+
+								<li id="menuform:om_menulayouts" role="menuitem"><a
+									href="#"><i
+										class="fa fa-fw fa-user fa-fw layout-menuitem-icon"></i><span
+										class="layout-menuitem-text">User Profile</span><i
+										class="fa fa-fw layout-submenu-toggler fa-angle-down"></i><span
+										class="menuitem-badge">2</span></a>
+									<div class="layout-menu-tooltip">
+										<div class="layout-menu-tooltip-arrow"></div>
+										<div class="layout-menu-tooltip-text">User Profile</div>
+									</div>
+									<ul role="menu">
+										<li id="menuform:om_menulayouts_1" role="menuitem"><a
+											href="employeTest.jsf"><i
+												class="fa fa-fw fa-bars fa-fw layout-menuitem-icon"></i><span
+												class="layout-menuitem-text">Add user</span></a>
+											<div class="layout-menu-tooltip">
+												<div class="layout-menu-tooltip-arrow"></div>
+												<div class="layout-menu-tooltip-text">Add user</div>
+											</div></li>
+										<li id="menuform:om_menulayouts_2" role="menuitem"><a
+											href="listEmployee.jsf"><i
+												class="fa fa-fw fa-bars fa-fw layout-menuitem-icon"></i><span
+												class="layout-menuitem-text">List Users</span></a>
+											<div class="layout-menu-tooltip">
+												<div class="layout-menu-tooltip-arrow"></div>
+												<div class="layout-menu-tooltip-text">List Users</div>
+											</div></li>
+									</ul></li></h:panelGroup>
+
+
+
+
+							</ul>
+						</li>
+
+					</ul>
+					<script id="menuform:j_idt40_s" type="text/javascript">
+						$(function() {
+							PrimeFaces.cw("Babylon", "widget_menuform_j_idt40",
+									{
+										id : "menuform:j_idt40",
+										statefulScroll : true
+									});
+						});
+					</script>
+					<input type="hidden" name="javax.faces.ViewState"
+						id="j_id1:javax.faces.ViewState:0"
+						value="6111909919562598689:5855945310390773730" autocomplete="off" />
+				</form>
+			</div>
+		</div>
+	</div>
+</ui:composition>

@@ -1,0 +1,116 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+
+	<ui:param name="page_name" value="listConge" />
+	<ui:define name="content">
+		<div class="layout-main">
+			<div class="route-bar">
+				<div class="route-bar-breadcrumb">
+					<i class="fa fa-home"></i> <span>/ </span>
+					<li><a
+						href="dashboard.xhtml%3bjsessionid%3dnode0k9h9q4j0db3l1pqrdr4ocw9i242324.html"
+						class="ui-link ui-widget">Management Leave</a></li>
+				</div>
+			</div>
+			<div class="layout-content" style="min-height: 300px">
+				<div class="layout-dashboard">
+					<div class="p-grid">
+						<div class="p-col-12">
+							<div class="ui-g ui-fluid">
+								<div class="ui-g-12">
+									<div class="card card-w-title">
+										<div id="form:j_idt48"
+											class="ui-datatable ui-widget ui-datatable-reflow">
+											<div
+												class="ui-datatable-header ui-widget-header ui-corner-top">List
+												of Leave</div>
+											<div>
+												<table role="grid">
+													<thead id="form:j_idt48_head">
+														<tr role="row">
+															<th id="form:j_idt48:j_idt50" role="columnheader"
+																aria-label="Id" scope="col"><span
+																class="ui-column-title">Employe</span></th>
+															<th id="form:j_idt48:j_idt52" role="columnheader"
+																aria-label="Year" scope="col"><span
+																class="ui-column-title">Start date</span></th>
+															<th id="form:j_idt48:j_idt54" role="columnheader"
+																aria-label="Brand" scope="col"><span
+																class="ui-column-title">End date</span></th>
+															<th id="form:j_idt48:j_idt56" role="columnheader"
+																aria-label="Color" scope="col"><span
+																class="ui-column-title">Reason</span></th>
+															<th id="form:j_idt48:j_idt56" role="columnheader"
+																aria-label="Color" scope="col"><span
+																class="ui-column-title">IsValid</span></th>
+															<th id="form:j_idt48:j_idt56" role="columnheader"
+																aria-label="Color" scope="col"><span
+																class="ui-column-title">Action</span></th>
+														</tr>
+													</thead>
+													<h:form>
+														<h:dataTable class="ui-datatable-data ui-widget-content"
+															tabindex="0" value="#{congeBean.conges}" var="conges">
+															<tr data-ri="0" data-rk="a8d76969"
+																class="ui-widget-content ui-datatable-even ui-datatable-selectable"
+																role="row" aria-selected="false">
+																<td role="gridcell"><h:column>
+																		<h:outputText value="#{conges.user.first_Name}" />
+																	</h:column></td>
+																<h:column role="gridcell">
+																	<h:outputText value="#{conges.dateDebut}" />
+																</h:column>
+																<h:column role="gridcell">
+																	<h:outputText value="#{conges.dateFin}" />
+																</h:column>
+																<h:column role="gridcell">
+																	<h:outputText value="#{conges.cause}" />
+																</h:column>
+																<h:column role="gridcell">
+
+																	<h:commandButton rendered="#{conges.isValid eq 0}"
+																		class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+																		value="Accept"
+																		action="#{congeBean.acceptConge(conges)}" />
+
+<hr/>
+																	<h:commandButton rendered="#{conges.isValid eq 0}"
+																		class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+																		value="Refuse"
+																		action="#{congeBean.refuseConge(conges)}" />
+
+
+
+																	<h:outputText rendered="#{conges.isValid eq 2}"
+																		value="This conge has been accepted" />
+
+
+																	<h:outputText rendered="#{conges.isValid eq 1}"
+																		value="This conge has been refused" />
+																</h:column>
+
+																<h:column role="gridcell">
+																	<h:commandButton
+																		class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+																		action="#{congeBean.removeConge(conges.idConge)}"
+																		value="Supprimer" />
+																</h:column>
+															</tr>
+														</h:dataTable>
+													</h:form>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

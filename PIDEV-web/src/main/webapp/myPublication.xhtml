@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:t="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/template.xhtml">
+	<!-- Mirrored from www.primefaces.org/babylon/forms.xhtml by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2019 20:05:39 GMT -->
+	<!-- Added by HTTrack -->
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<!-- /Added by HTTrack -->
+	<ui:define name="content">
+		<h:head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="viewport"
+				content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+			<meta name="apple-mobile-web-app-capable" content="yes" />
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/theme.cssb7c2.css?ln=primefaces-babylon-blue-accent" />
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/fa/font-awesome.css68f8.css?ln=primefaces&amp;v=7.0" />
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/components.css68f8.css?ln=primefaces&amp;v=7.0" />
+			<script type="text/javascript"
+				src="javax.faces.resource/jquery/jquery.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+			<script type="text/javascript"
+				src="javax.faces.resource/core.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+			<script type="text/javascript"
+				src="javax.faces.resource/components.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+			<script type="text/javascript"
+				src="javax.faces.resource/jquery/jquery-plugins.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/inputswitch/inputswitch.css68f8.css?ln=primefaces&amp;v=7.0" />
+			<script type="text/javascript"
+				src="javax.faces.resource/inputswitch/inputswitch.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/keyboard/keyboard.css68f8.css?ln=primefaces&amp;v=7.0" />
+			<script type="text/javascript"
+				src="javax.faces.resource/keyboard/keyboard.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/css/nanoscroller.cssc7f4.css?ln=babylon-layout" />
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/css/primeflex.cssc7f4.css?ln=babylon-layout" />
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/css/layout-blue.cssc7f4.css?ln=babylon-layout" />
+
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/bootstrap/css/bootstrap-theme.css" />
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/bootstrap/css/bootstrap-theme.min.css" />
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/bootstrap/css/bootstrap.css" />
+			<link type="text/css" rel="stylesheet"
+				href="javax.faces.resource/bootstrap/css/bootstrap.min.css" />
+			<script type="text/javascript">
+				if (window.PrimeFaces) {
+					PrimeFaces.settings.locale = 'en_US';
+					PrimeFaces.settings.projectStage = 'Development';
+				}
+			</script>
+			<title>Forms</title>
+			<script type="text/javascript"
+				src="javax.faces.resource/js/nanoscroller.jsc7f4.xhtml?ln=babylon-layout"></script>
+			<script type="text/javascript"
+				src="javax.faces.resource/js/layout.jsc7f4.xhtml?ln=babylon-layout"></script>
+		</h:head>
+		<h:body>
+			<div class="layout-wrapper layout-static layout-menu-dark ">
+
+
+
+
+
+				<div class="layout-main">
+
+					<div class="layout-content" style="min-height: 300px">
+						<div class="ui-g ui-fluid">
+							<div class="ui-g-12 ui-lg-6">
+								<!-- Left Side -->
+
+
+
+
+
+								<br />
+
+
+
+
+								<h:form enctype="multipart/form-data">
+
+
+									<div class="card card-w-title">
+										<h1>Add Post</h1>
+										<div id="j_idt57"
+											class="ui-panelgrid ui-widget form-group ui-panelgrid-blank">
+											<div id="j_idt57_content"
+												class="ui-panelgrid-content ui-widget-content ui-grid ui-grid-responsive">
+
+
+												<div class="ui-g">
+													<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+														<label>Description :</label>
+													</div>
+												</div>
+												<div class="ui-g">
+													<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+														<h:inputText id="validatePub"
+															value="#{mypublicationBean.descPub}" required="true"
+															requiredMessage="Required"
+															class="ui-autocomplete-input ui-inputfield ui-widget ui-state-default ui-corner-all" />
+														<h:message for="validatePub" style="color:red" />
+													</div>
+												</div>
+
+
+												<div class="ui-g">
+													<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+														<label>Photo :</label>
+													</div>
+												</div>
+												<div class="ui-g">
+													<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+														<h:inputFile value="#{mypublicationBean.file}"
+															class="ui-autocomplete-input ui-inputfield ui-widget ui-state-default ui-corner-all" />
+
+													</div>
+												</div>
+
+
+												<div class="ui-g">
+
+													<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+														<h:commandButton
+															class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+															style="width: auto"
+															action="#{mypublicationBean.AjouterPub()}"
+															value="Add" />
+
+
+
+													</div>
+
+													<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+														<h:commandButton
+															class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+															style="width: auto"
+															action="#{mypublicationBean.mettreAjourPub()}"
+															value="Update post" />
+
+
+
+													</div>
+												</div>
+
+
+
+
+
+
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+
+
+
+
+								</h:form>
+
+
+
+
+
+								<div class="ui-g-12"
+									style="text-align: center; margin: 0px 300px">
+
+
+									<div id="j_idt47:j_idt178"
+										class="ui-carousel ui-widget ui-widget-content ui-corner-all ui-hidden-container">
+										<div class="ui-carousel-header ui-widget-header ui-corner-all">
+											<div class="ui-carousel-header-title">My Posts</div>
+										</div>
+
+										<div class="ui-carousel-viewport">
+											<ul class="ui-carousel-items">
+												<h:form>
+													<h:dataTable value="#{mypublicationBean.publications}"
+														var="pub">
+														<h:column>
+															<li
+																class="ui-carousel-item ui-widget-content ui-corner-all"
+																style="text-align: center; margin: 10px 150px"><div
+																	id="j_idt47:j_idt178:0:j_idt179"
+																	class="ui-panelgrid ui-widget ui-panelgrid-blank"
+																	style="width: 100%; margin: 10px 0px">
+																	<div class="ui-p	anelgrid-header ui-widget-header">
+																		<img src="image/#{pub.photoPub}.jpg" height="100px"
+																			width="100px"></img>
+																	</div>
+																	<div id="j_idt47:j_idt178:0:j_idt179_content"
+																		class="ui-panelgrid-content ui-widget-content ui-grid ui-grid-responsive">
+																		<div class="ui-g">
+																			<div>
+																				<h:outputText value="#{pub.user.first_Name}" />
+																			</div>
+																		</div>
+																		<div class="ui-g">
+																			<div>
+																				<h:outputText value="#{pub.descPub}" />
+																			</div>
+																		</div>
+																		<div class="ui-g">
+
+																			<div>
+																				<h:outputText value="#{pub.datePub}" />
+																			</div>
+																		</div>
+
+																		<div class="ui-g">
+
+																			<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+
+
+																				<h:commandButton
+																					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+																					style="width: auto"
+																					action="#{mypublicationBean.removePub(pub.idPub)}"
+																					value="Remove" />
+
+
+
+
+																			</div>
+																		</div>
+
+																		<div class="ui-g">
+
+																			<div class="ui-panelgrid-cell ui-g-12 ui-md-12">
+
+
+
+																				<h:commandButton
+																					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+																					style="width: auto"
+																					action="#{mypublicationBean.updatePub(pub)}"
+																					value="Update" />
+
+
+
+																			</div>
+																		</div>
+
+
+																	</div>
+																</div></li>
+
+														</h:column>
+													</h:dataTable>
+												</h:form>
+											</ul>
+										</div>
+
+
+										<input id="j_idt47:j_idt178_page" name="j_idt47:j_idt178_page"
+											type="hidden" autocomplete="off" value="0" />
+									</div>
+									<script id="j_idt47:j_idt178_s" type="text/javascript">
+										$(function() {
+											PrimeFaces
+													.cw(
+															"Carousel",
+															"widget_j_idt47_j_idt178",
+															{
+																id : "j_idt47:j_idt178",
+																responsive : true,
+																breakpoint : 640,
+																stateful : false
+															});
+										});
+									</script>
+
+								</div>
+
+							</div>
+						</div>
+						<input type="hidden" name="javax.faces.ViewState"
+							id="j_id1:javax.faces.ViewState:84"
+							value="7345553684132181228:373541139575448012" autocomplete="off" />
+
+
+
+
+
+
+
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+			<input type="hidden" name="javax.faces.ViewState"
+				id="j_id1:javax.faces.ViewState:84"
+				value="7345553684132181228:373541139575448012" autocomplete="off" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</h:body>
+
+
+		<!-- Mirrored from www.primefaces.org/babylon/forms.xhtml by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2019 20:05:39 GMT -->
+	</ui:define>
+</ui:composition>
